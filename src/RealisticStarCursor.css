@@ -1,0 +1,249 @@
+/* Hide default cursor */
+* {
+  cursor: none !important;
+}
+
+body {
+  cursor: none !important;
+}
+
+/* Realistic Star Cursor */
+.realistic-star-cursor {
+  position: fixed;
+  pointer-events: none;
+  z-index: 10000;
+  width: 0;
+  height: 0;
+  will-change: transform;
+  transition: none;
+}
+
+/* Star Core */
+.star-core {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  transition: transform 0.2s ease-out;
+}
+
+/* Bright center point - White + Blue */
+.star-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, #ffffff 0%, #d4f1ff 30%, #66b3ff 100%);
+  border-radius: 50%;
+  box-shadow: 
+    0 0 6px #ffffff,
+    0 0 12px #66b3ff,
+    0 0 18px #3399ff,
+    0 0 24px #0088ff;
+  animation: core-pulse 3s ease-in-out infinite;
+}
+
+@keyframes core-pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.3);
+    opacity: 0.8;
+  }
+}
+
+/* Star Rays Container */
+.star-rays {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  animation: slow-rotate 20s linear infinite;
+}
+
+/* Individual Rays - Bright White + Blue */
+.ray {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.9) 40%,
+    rgba(102, 179, 255, 0.9) 50%, 
+    rgba(255, 255, 255, 0.9) 60%,
+    transparent 100%
+  );
+  opacity: 0.8;
+  animation: ray-flicker 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 2px #66b3ff);
+}
+
+.ray-1 {
+  width: 30px;
+  height: 2px;
+  transform: translate(-50%, -50%) rotate(0deg);
+  animation-delay: 0s;
+}
+
+.ray-2 {
+  width: 30px;
+  height: 2px;
+  transform: translate(-50%, -50%) rotate(90deg);
+  animation-delay: 0.5s;
+}
+
+.ray-3 {
+  width: 24px;
+  height: 1.5px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  animation-delay: 1s;
+}
+
+.ray-4 {
+  width: 24px;
+  height: 1.5px;
+  transform: translate(-50%, -50%) rotate(135deg);
+  animation-delay: 1.5s;
+}
+
+@keyframes ray-flicker {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes slow-rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Glow Layers - Bright White + Blue */
+.star-glow-1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, 
+    rgba(255, 255, 255, 0.6) 0%, 
+    rgba(102, 179, 255, 0.4) 40%,
+    rgba(51, 153, 255, 0.2) 70%,
+    transparent 90%
+  );
+  border-radius: 50%;
+  animation: glow-pulse-1 3s ease-in-out infinite;
+}
+
+.star-glow-2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, 
+    rgba(204, 229, 255, 0.5) 0%, 
+    rgba(102, 179, 255, 0.3) 50%,
+    rgba(0, 136, 255, 0.1) 80%,
+    transparent 95%
+  );
+  border-radius: 50%;
+  animation: glow-pulse-2 3s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+.star-glow-3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, 
+    rgba(153, 204, 255, 0.3) 0%,
+    rgba(51, 153, 255, 0.15) 50%,
+    transparent 80%
+  );
+  border-radius: 50%;
+  animation: glow-pulse-3 4s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+@keyframes glow-pulse-1 {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.6;
+  }
+}
+
+@keyframes glow-pulse-2 {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.3);
+    opacity: 0.4;
+  }
+}
+
+@keyframes glow-pulse-3 {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.4);
+    opacity: 0.2;
+  }
+}
+
+/* Hover Effects - Brighter on hover */
+a:hover ~ .realistic-star-cursor .star-core,
+button:hover ~ .realistic-star-cursor .star-core {
+  transform: translate(-50%, -50%) scale(1.3);
+}
+
+a:hover ~ .realistic-star-cursor .star-center,
+button:hover ~ .realistic-star-cursor .star-center {
+  box-shadow: 
+    0 0 8px #ffffff,
+    0 0 16px #66b3ff,
+    0 0 24px #3399ff,
+    0 0 32px #0088ff;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .realistic-star-cursor {
+    display: none !important;
+  }
+  
+  * {
+    cursor: auto !important;
+  }
+  
+  body {
+    cursor: auto !important;
+  }
+}
