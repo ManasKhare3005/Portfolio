@@ -56,6 +56,13 @@ export default function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {                                                                                                                                   
+        const link = document.querySelector("link[rel~='icon']") || document.createElement('link');                                                       
+        link.rel = 'icon';                                                                                                                                
+        link.href = darkMode ? '/web_logo_dark.jpg' : '/web_logo.jpg';                                                                                    
+        document.head.appendChild(link);                                                                                                                  
+      }, [darkMode]);
+
   const handleNavClick = () => setMobileMenuOpen(false);
 
   const navSections = ['home', 'about', 'experience', 'education', 'projects', 'skills', 'achievements', 'contact'];
