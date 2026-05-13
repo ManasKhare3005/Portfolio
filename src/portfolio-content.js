@@ -89,6 +89,74 @@ export const portfolioData = {
   // Projects Section
   projects: [
     {
+      title: "Resumify",
+      category: "AI Career Platform",
+      description: "An AI-powered resume builder that helps users build, score, tailor, and export job-ready resumes",
+      fullDescription: "Built a full-stack career toolkit that combines resume creation, PDF import, portfolio and GitHub parsing, ATS scoring, job-specific tailoring, cover letter generation, interview prep, and polished export workflows in one application.",
+      features: [
+        "Resume builder with PDF, portfolio, and GitHub import flows",
+        "AI rewriting for bullet points, summaries, and role-specific tailoring",
+        "ATS scorecards with matched keywords, missing keywords, and section-level fixes",
+        "Cover letter and interview-prep generators driven by resume and job descriptions",
+        "PDF and LaTeX export for recruiter-ready resumes"
+      ],
+      technologies: ["React", "Vite", "Tailwind CSS", "Node.js", "Express", "PostgreSQL", "Firebase", "Groq"],
+      impact: "Consolidates resume building, ATS optimization, tailoring, cover letters, and interview prep into one guided workflow",
+      icon: "📄",
+      link: "https://resumify-hlur.onrender.com/"
+    },
+    {
+      title: "CareBridge",
+      category: "Healthcare AI / Operations",
+      description: "A clinical operations console that turns care-call transcripts into risk signals, triage routes, and follow-up actions",
+      fullDescription: "Created a healthcare AI platform for processing CareCaller transcripts into structured clinical and emotional risk signals, confidence-aware transcript insights, automated routing, timeline tracking, navigator callback queues, and real-time warm-handoff support sessions.",
+      features: [
+        "Transcript analysis with clinical risk, emotional risk, and confidence scoring",
+        "Automated triage routing with persistent trend warnings across recent calls",
+        "Role-based callback queue with SLA pressure and closed-loop status tracking",
+        "Realtime support sessions powered by Socket.IO",
+        "Telephony-focused STT service with faster-whisper and LoRA fine-tuning workflow"
+      ],
+      technologies: ["React", "TypeScript", "Vite", "Node.js", "Express", "PostgreSQL", "Socket.IO", "FastAPI", "Whisper"],
+      impact: "Turns raw care-call transcripts into clear next actions for navigator teams and support staff",
+      icon: "🏥",
+      link: "https://github.com/ManasKhare3005/CareBridge"
+    },
+    {
+      title: "Concierge",
+      category: "Real Estate AI Companion",
+      description: "A real estate AI companion for agent triage, client document Q&A, readiness tracking, and voice follow-up",
+      fullDescription: "Built a TypeScript monorepo for Lofty GlobeHack 2026 that gives agents a live triage dashboard and gives buyers or sellers a client-safe portal for PDF summaries, contextual document Q&A, sentiment-based readiness tracking, real-time updates, and simulated voice-bot follow-up.",
+      features: [
+        "Agent triage board grouped by client attention level and booking status",
+        "Client portal with magic-link login, save-progress flow, and Spanish-ready demo users",
+        "PDF upload, extraction, categorization, summary generation, and authenticated serving",
+        "Groq-backed document Q&A, sentiment analysis, prep briefs, and readiness reclassification",
+        "Server-Sent Events for live agent/client state updates"
+      ],
+      technologies: ["React", "TypeScript", "Vite", "Tailwind CSS", "Express", "Prisma", "SQLite", "Groq", "ElevenLabs"],
+      impact: "Reduces agent follow-up friction by turning documents, sentiment, and client questions into live triage signals",
+      icon: "🏠",
+      link: "https://github.com/ManasKhare3005/Concierge"
+    },
+    {
+      title: "CoverageAtlas",
+      category: "Policy Intelligence / RAG",
+      description: "A medical-benefit coverage intelligence platform for searching, comparing, and tracking payer policy rules",
+      fullDescription: "Developed a policy intelligence platform that ingests payer policy documents, extracts structured coverage rules, stores searchable evidence, answers coverage questions with citations, compares plans, tracks policy changes over time, and supports voice-assisted policy Q&A.",
+      features: [
+        "Policy ingestion from PDF and web sources with structured rule extraction",
+        "Citation-first RAG answers using Postgres evidence and Qdrant vector search",
+        "Plan comparison, policy timeline, version diffing, and recent-change workflows",
+        "Patient-facing React UI with ask, assistant, compare, access lab, timeline, and profile views",
+        "LiveKit voice agent path for real-time grounded coverage questions"
+      ],
+      technologies: ["React", "TypeScript", "FastAPI", "PostgreSQL", "Qdrant", "Gemini", "Auth0", "LiveKit", "Docker"],
+      impact: "Makes dense insurance coverage policies searchable, comparable, and explainable with source-backed answers",
+      icon: "🗺️",
+      link: "https://coverageatlas.vercel.app/ask"
+    },
+    {
       title: "CRISPR: Promise & Peril",
       category: "Data Visualization",
       description: "An interactive dual-narrative visualization platform exploring the promise and risks of CRISPR gene-editing technology",
