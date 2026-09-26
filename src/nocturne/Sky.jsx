@@ -19,7 +19,12 @@ const NOISE = /* glsl */ `
   }
   float fbm(vec2 p) {
     float v = 0.0, a = 0.5;
-    for (int i = 0; i < 5; i++) { v += a * noise(p); p *= 2.03; a *= 0.5; }
+    for (int i = 0; i < 4; i++) { v += a * noise(p); p *= 2.03; a *= 0.5; }
+    return v;
+  }
+  float fbm3(vec2 p) {
+    float v = 0.0, a = 0.5;
+    for (int i = 0; i < 3; i++) { v += a * noise(p); p *= 2.03; a *= 0.5; }
     return v;
   }
 `;
@@ -64,7 +69,7 @@ function Dome({ uniforms }) {
         if (uDay > 0.01 && h > 0.0) {
           vec2 uv = d.xz / (h + 0.12) * 1.2 + vec2(uTime * 0.005, uTime * 0.002);
           float c = fbm(uv);
-          float c2 = fbm(uv * 2.2 + 3.7);
+          float c2 = fbm3(uv * 2.2 + 3.7);
           float cover = smoothstep(0.5, 0.8, c * 0.85 + c2 * 0.32)
                       * smoothstep(0.0, 0.1, h) * (1.0 - smoothstep(0.5, 0.95, h));
           float light = clamp(0.45 + 1.1 * (c - c2) + pow(sd, 3.0) * 0.7, 0.0, 1.0);
@@ -159,7 +164,7 @@ function Stars({ data, uniforms }) {
 
 function MilkyWay({ uniforms }) {
   const geometry = useMemo(() => {
-    const count = isMobile ? 9000 : 18000;
+    const count = isMobile ? 6000 : 12000;
     const pos = [], col = [], size = [], alpha = [];
     const gauss = () => Math.sqrt(-2 * Math.log(Math.random() + 1e-9)) * Math.cos(2 * Math.PI * Math.random());
     let made = 0;
@@ -172,10 +177,10 @@ function MilkyWay({ uniforms }) {
       const v = galacticToEquatorialVector(l, b);
       pos.push(v[0] * STAR_RADIUS * 1.02, v[1] * STAR_RADIUS * 1.02, v[2] * STAR_RADIUS * 1.02);
       const warm = Math.exp(-((dl / 45) ** 2));
-      const glow = Math.random() < 0.06;
+      const glow = Math.random() < 0.015;
       col.push(0.72 + 0.28 * warm, 0.78 + 0.1 * warm, 1.0 - 0.25 * warm);
-      size.push(glow ? 24 + Math.random() * 40 : 1.8 + Math.random() * 2.2);
-      alpha.push(glow ? 0.018 + 0.02 * warm : 0.05 + Math.random() * 0.14);
+      size.push(glow ? 16 + Math.random() * 20 : 1.8 + Math.random() * 2.2);
+      alpha.push(glow ? 0.03 + 0.03 * warm : 0.05 + Math.random() * 0.14);
       made++;
     }
     const g = new THREE.BufferGeometry();
@@ -232,7 +237,7 @@ const NEBULAE = [
   { ra: 83.8, dec: -5.4, size: 9, a: [1.0, 0.42, 0.62], b: [0.4, 0.5, 1.0] },     // Orion Nebula
   { ra: 161.3, dec: -59.9, size: 12, a: [1.0, 0.55, 0.4], b: [0.9, 0.3, 0.6] },   // Carina
   { ra: 271.0, dec: -24.4, size: 9, a: [1.0, 0.38, 0.55], b: [0.5, 0.4, 1.0] },   // Lagoon
-  { ra: 266.4, dec: -29.0, size: 26, a: [1.0, 0.78, 0.55], b: [0.7, 0.5, 0.4] },  // Galactic core
+  { ra: 266.4, dec: -29.0, size: 18, a: [1.0, 0.78, 0.55], b: [0.7, 0.5, 0.4] },  // Galactic core
   { ra: 10.7, dec: 41.3, size: 7, a: [0.85, 0.8, 1.0], b: [0.7, 0.7, 1.0] },     // Andromeda
   { ra: 56.75, dec: 24.1, size: 6, a: [0.5, 0.68, 1.0], b: [0.75, 0.85, 1.0] },   // Pleiades
   { ra: 314.7, dec: 44.3, size: 9, a: [1.0, 0.38, 0.5], b: [0.6, 0.3, 0.75] },    // North America
@@ -274,7 +279,7 @@ function Nebula({ spec, index, uniforms }) {
         vec2 p = vUv - 0.5;
         float r = length(p) * 2.0;
         float n = fbm(p * 3.2 + uSeed + uTime * 0.004);
-        float n2 = fbm(p * 6.0 - uSeed);
+        float n2 = fbm3(p * 6.0 - uSeed);
         float shape = smoothstep(1.0, 0.1, r + (n - 0.5) * 0.9);
         vec3 col = mix(uA, uB, n2);
         float a = shape * shape * (0.25 + 0.6 * n) * 0.3 * vFade * (1.0 - uDay);
@@ -282,11 +287,13 @@ function Nebula({ spec, index, uniforms }) {
       }`
   }), [uniforms, spec, index]);
 
+  const pq = useMemo(() => new THREE.Quaternion(), []);
   useFrame(({ camera }) => {
     if (!ref.current) return;
+    ref.current.visible = uniforms.uDay.value < 0.97;
+    if (!ref.current.visible) return;
     ref.current.quaternion.copy(camera.quaternion);
     if (ref.current.parent) {
-      const pq = new THREE.Quaternion();
       ref.current.parent.getWorldQuaternion(pq);
       ref.current.quaternion.premultiply(pq.invert());
     }
@@ -451,6 +458,40 @@ function CameraRig({ live, uniforms }) {
   return null;
 }
 
+/* ---------- Frame governor: 30 fps when idle, full rate while scrolling or changing theme ---------- */
+const IDLE_FPS = 30;
+function FrameDriver({ theme, intro }) {
+  const invalidate = useThree((s) => s.invalidate);
+  const activeUntil = useRef(0);
+
+  useEffect(() => {
+    activeUntil.current = performance.now() + 3500;
+  }, [theme, intro]);
+
+  useEffect(() => {
+    let raf;
+    let last = 0;
+    const poke = () => {
+      activeUntil.current = Math.max(activeUntil.current, performance.now() + 1200);
+    };
+    const loop = (t) => {
+      raf = requestAnimationFrame(loop);
+      if (t < activeUntil.current || t - last >= 1000 / IDLE_FPS - 2) {
+        last = t;
+        invalidate();
+      }
+    };
+    window.addEventListener('scroll', poke, { passive: true });
+    raf = requestAnimationFrame(loop);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener('scroll', poke);
+    };
+  }, [invalidate]);
+
+  return null;
+}
+
 function Scene(props) {
   const live = useLive(props);
   const { gl } = useThree();
@@ -468,6 +509,7 @@ function Scene(props) {
 
   return (
     <>
+      <FrameDriver theme={props.theme} intro={props.intro} />
       <CameraRig live={live} uniforms={uniforms} />
       <Dome uniforms={uniforms} />
       <CelestialSphere live={live}>
@@ -490,8 +532,8 @@ export default function Sky({ theme, location, intro, paused, reducedMotion }) {
   return (
     <Canvas
       flat
-      dpr={[1, isMobile ? 1.5 : 1.75]}
-      frameloop={paused ? 'never' : 'always'}
+      dpr={isMobile ? 1 : [1, 1.25]}
+      frameloop={paused ? 'never' : 'demand'}
       gl={{ antialias: false, powerPreference: 'high-performance' }}
       camera={{ fov: 62, near: 0.1, far: 1000, position: [0, 0, 0] }}
     >
