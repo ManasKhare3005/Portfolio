@@ -1,311 +1,400 @@
-// Portfolio Content for Manas Khare
+// Portfolio Content for Manas Khare — "Nocturne" edition
+// Everything visible on the site lives here. Edit freely.
 
 export const portfolioData = {
-  // Hero Section
   hero: {
     name: "Manas Khare",
-    title: "Full Stack Developer & Software Engineer",
-    tagline: "Crafting innovative solutions through code and creativity",
-    description: "Master's student in Computer Science at Arizona State University, passionate about building scalable applications and solving complex problems with modern technologies.",
+    title: "Full-Stack Engineer · ML / AI",
+    tagline: "I build software the way I watch the night sky: patiently, curiously, one small light at a time.",
+    description: "M.S. Computer Science at Arizona State University. I ship full-stack products and teach machines to see, listen and read.",
     contact: {
       email: "manaskhare63739@gmail.com",
       phone: "+1 (602) 743-5297",
       location: "Arizona, USA",
-      linkedin: "www.linkedin.com/in/manas-khare-3b377818b/"
+      linkedin: "https://www.linkedin.com/in/manas-khare-3b377818b/",
+      github: "https://github.com/ManasKhare3005",
+      resume: "/Resume.pdf"
     }
   },
 
-  // About Section
-  about: {
-    title: "About Me",
+  // About — written as a letter
+  letter: {
+    greeting: "Dear visitor,",
     paragraphs: [
-      "I'm a passionate software engineer pursuing my Master's in Computer Science at Arizona State University, with a strong foundation in full-stack development and a proven track record of delivering impactful solutions.",
-      "With professional experience spanning multiple roles at EQG Glassmach and Brillio, I specialize in building robust order management systems, optimizing APIs, and implementing microservices architecture. My approach combines clean code principles with user-centric design to create applications that truly make a difference.",
-      "Beyond development, I'm deeply invested in emerging technologies, having earned certifications in Machine Learning from Stanford University and Oracle Cloud Infrastructure. I believe in continuous learning and bringing innovative solutions to real-world challenges."
+      "Thank you for stopping by. I'm Manas, a software engineer pursuing my Master's in Computer Science at Arizona State University.",
+      "Before graduate school I spent two years building real systems: order-management platforms at EQG Glassmach and microservice back-ends at Brillio, where API and architecture work made one application 30% faster. I love the whole stack, from a React component all the way down to the database index.",
+      "Lately I've been living where software meets machine learning: vision transformers that learn to click through dashboards, speech models that listen to care calls, and language models that turn documents into maps of ideas.",
+      "When I'm not building, I'm usually outside under a dark sky, lost in a soundtrack, or rewatching a story that makes me feel something. This site is a little of all three."
     ],
-    highlights: [
-      "Top 25 in Zeta Hacks (200+ teams)",
-      "1st Place in Hack-A-Code",
-      "Top 5 in HackBMU 4.0",
-      "Machine Learning Certified"
-    ]
+    signoff: "Yours, under the same sky,",
+    signature: "Manas"
   },
 
-  // Experience Section
-  experience: [
+  // Experience + education, oldest first. The moon waxes as the story goes on.
+  journey: [
     {
-      title: "Software Developer",
-      company: "EQG Glassmach",
-      location: "Por, Gujarat, India",
-      period: "Sep 2024 – July 2025",
-      description: "Led development of enterprise solutions with focus on scalability and performance",
-      achievements: [
-        "Architected and developed a comprehensive order management system that revolutionized internal workflows, significantly improving processing efficiency and resource accessibility across teams",
-        "Collaborated with cross-functional teams to gather requirements, implement clean code practices, and deliver robust features while maintaining high code quality",
-        "Enhanced system stability and performance through rigorous testing, debugging, and optimization, resulting in measurable improvements in application responsiveness"
-      ],
-      technologies: ["SpringBoot", "React", "MySQL", "Microservices"]
+      kind: "education",
+      title: "B.Tech. Computer Science & Engineering",
+      org: "SRM Institute of Science and Technology",
+      location: "India",
+      period: "Jun 2019 – Jun 2023",
+      description: "Graduated with an 8.42 CGPA, focused on software development and machine learning.",
+      points: [],
+      technologies: []
     },
     {
-      title: "Associate Engineer",
-      company: "Brillio",
-      location: "Bengaluru, Karnataka, India",
-      period: "Mar 2024 – Sep 2024",
-      description: "Delivered client-focused software solutions with emphasis on performance and scalability",
-      achievements: [
-        "Designed and implemented enterprise-grade software solutions perfectly aligned with client requirements, leveraging SpringBoot, React, and MySQL for optimal performance",
-        "Boosted application efficiency by 30% through strategic API optimization and implementation of microservices architecture using Eureka service discovery",
-        "Fostered seamless cross-team collaboration to ensure timely delivery of high-quality features and maintain project momentum"
+      kind: "work",
+      title: "Technical Content Writer",
+      org: "Oyesters Training",
+      location: "Remote",
+      period: "Oct 2020 – Nov 2020",
+      description: "Created technical documentation and educational content.",
+      points: [
+        "Authored technical articles covering software engineering best practices and emerging technologies",
+        "Produced clear, well-researched content that improved team learning outcomes"
       ],
-      technologies: ["SpringBoot", "React", "MySQL", "Eureka", "Microservices"]
+      technologies: ["Technical Writing", "Documentation"]
     },
     {
+      kind: "work",
       title: "Software Developer Trainee",
-      company: "EQG Glassmach",
+      org: "EQG Glassmach",
       location: "Por, Gujarat, India",
-      period: "June 2023 – Feb 2024",
-      description: "Spearheaded client implementations and system development initiatives",
-      achievements: [
-        "Successfully led on-site installations for critical projects, ensuring flawless deployment and smooth user adoption at customer locations",
-        "Developed innovative order management software from the ground up, dramatically improving operational efficiency and making resources more accessible to users",
-        "Demonstrated strong problem-solving skills and adaptability while transitioning from academic learning to professional software development"
+      period: "Jun 2023 – Feb 2024",
+      description: "Led client implementations and early system development.",
+      points: [
+        "Led on-site installations for critical projects, ensuring smooth deployment and user adoption",
+        "Built order-management software from the ground up, improving operational efficiency"
       ],
       technologies: ["Java", "Web Development", "System Design"]
     },
     {
-      title: "Technical Content Writer",
-      company: "Oyesters Training",
-      location: "Remote",
-      period: "Oct 2020 – Nov 2020",
-      description: "Created technical documentation and educational content",
-      achievements: [
-        "Authored comprehensive technical articles covering software engineering best practices and emerging technologies",
-        "Enhanced organizational knowledge sharing by producing clear, well-researched content that improved team learning outcomes"
+      kind: "work",
+      title: "Associate Engineer",
+      org: "Brillio",
+      location: "Bengaluru, India",
+      period: "Mar 2024 – Sep 2024",
+      description: "Delivered client-focused software with an emphasis on performance and scale.",
+      points: [
+        "Boosted application efficiency by 30% through API optimization and a microservices architecture with Eureka service discovery",
+        "Designed enterprise solutions with SpringBoot, React and MySQL aligned to client requirements"
       ],
-      technologies: ["Technical Writing", "Documentation"]
+      technologies: ["SpringBoot", "React", "MySQL", "Eureka", "Microservices"]
+    },
+    {
+      kind: "work",
+      title: "Software Developer",
+      org: "EQG Glassmach",
+      location: "Por, Gujarat, India",
+      period: "Sep 2024 – Jul 2025",
+      description: "Led development of enterprise solutions focused on scalability and performance.",
+      points: [
+        "Architected a comprehensive order-management system that reshaped internal workflows across teams",
+        "Improved stability and responsiveness through rigorous testing, debugging and optimization"
+      ],
+      technologies: ["SpringBoot", "React", "MySQL", "Microservices"]
+    },
+    {
+      kind: "education",
+      title: "M.S. Computer Science",
+      org: "Arizona State University",
+      location: "Arizona, USA",
+      period: "Aug 2025 – Present",
+      description: "Graduate study in software engineering, distributed systems and artificial intelligence. Still waxing.",
+      points: [],
+      technologies: []
     }
   ],
 
-  // Projects Section
+  // Projects. group: "system" = full-stack planets, "nebula" = ML / AI stars.
   projects: [
     {
-      title: "CRISPR: Promise & Peril",
-      category: "Data Visualization",
-      description: "An interactive dual-narrative visualization platform exploring the promise and risks of CRISPR gene-editing technology",
-      fullDescription: "Built as part of ASU's CSE 578 Data Visualization course, this platform presents two immersive, narrative-driven stories that contrast the optimistic potential and ethical dangers of CRISPR. Users explore topics like genetic disease treatment, agricultural engineering, personalized medicine, and the societal implications of genetic modification.",
+      id: "concierge",
+      group: "nebula",
+      title: "Concierge",
+      category: "AI Companion · Lofty GlobeHack 2026",
+      description: "A full-stack real-estate AI companion: agents get a live triage board, clients get a document portal that speaks plain English.",
       features: [
-        "Dual-narrative structure — CRISPR: Promise vs CRISPR: Peril",
-        "Interactive data visualizations illustrating genetic engineering concepts",
-        "Immersive storytelling with user-driven exploration",
-        "Covers ethics, inequality, and unintended mutation risks",
-        "Deployed and publicly accessible via Netlify"
+        "PDF extraction, categorization and plain-English summaries",
+        "Question-aware document Q&A with sentiment-driven readiness triage",
+        "Live agent dashboard over Server-Sent Events",
+        "Simulated AI voice-bot follow-ups with ElevenLabs audio"
       ],
-      technologies: ["D3.js", "JavaScript", "HTML5", "CSS3", "Netlify"],
-      impact: "Transforms complex biotechnology research into an accessible, engaging interactive experience",
-      icon: "🧬",
-      link: "https://crispr-promise-peril.netlify.app/"
+      technologies: ["TypeScript", "React", "Express", "Prisma", "SSE", "Groq", "ElevenLabs"],
+      impact: "Takes a transaction from PDF upload to voice follow-up in one strict-TypeScript monorepo",
+      hue: 265,
+      link: "https://github.com/ManasKhare3005/Concierge"
     },
     {
-      title: "DevAssist — Vercel Deployment Agent",
-      category: "AI Agent / Automation",
-      description: "A lightweight AI agent that automates end-to-end Vercel project deployment using browser automation and a vision model",
-      fullDescription: "Built an intelligent deployment agent that learns from real-world Vercel dashboard interactions. It trains a Vision Transformer (ViT-Tiny) on recorded trajectories and then autonomously drives a Chromium browser through the full deployment workflow — from project creation to GitHub import and live deployment.",
+      id: "carebridge",
+      group: "nebula",
+      title: "CareBridge",
+      category: "Clinical AI · Speech + Triage",
+      description: "Turns raw care-call transcripts into structured clinical and emotional risk signals, and routes each one to a clear next action.",
       features: [
-        "Vision Transformer (ViT-Tiny) encoder for pixel-level UI understanding",
-        "Playwright-driven headless Chromium browser automation",
-        "Hybrid bootstrapping: manual trajectories + automated learning",
-        "Click heatmaps, action classification, and text token generation",
-        "Full pipeline from repo selection to live Vercel deployment"
+        "faster-whisper speech service with a LoRA fine-tuning pipeline",
+        "Transcript confidence scoring that flags uncertain sections",
+        "Automated triage routing and callback scheduling",
+        "Realtime warm-handoff chat over Socket.IO"
       ],
-      technologies: ["Python", "Playwright", "Vision Transformer", "Chromium", "ViT-Tiny"],
-      impact: "Fully automates a 5-step Vercel deployment workflow with zero manual intervention",
-      icon: "🤖",
+      technologies: ["TypeScript", "React", "Node.js", "PostgreSQL", "FastAPI", "faster-whisper", "LoRA"],
+      impact: "One transcript in, one clear action out",
+      hue: 175,
+      link: "https://github.com/ManasKhare3005/CareBridge"
+    },
+    {
+      id: "conceptweave",
+      group: "nebula",
+      title: "ConceptWeave",
+      category: "LLM · Knowledge Graphs",
+      description: "Upload a document and watch it become an interactive knowledge graph of concepts, clusters and the links between them.",
+      features: [
+        "LLM concept extraction from PDF, TXT and Markdown",
+        "all-MiniLM-L6-v2 embeddings with K-Means clustering",
+        "Semantic edges and natural-language graph queries",
+        "Dockerized FastAPI + React stack with tests"
+      ],
+      technologies: ["Python", "FastAPI", "React", "PostgreSQL", "Groq", "Embeddings", "Docker"],
+      impact: "Turns a wall of text into a map of ideas you can explore",
+      hue: 205,
+      link: "https://github.com/ManasKhare3005/Concept-Weave"
+    },
+    {
+      id: "resumify",
+      group: "nebula",
+      title: "Resumify",
+      category: "AI Product · Careers",
+      description: "An AI resume builder that writes, tailors, scores and exports your resume in one place, so you don't bounce between five websites.",
+      features: [
+        "Import from PDF, GitHub or a portfolio site",
+        "Job-description tailoring and ATS keyword scoring",
+        "Cover letters and interview prep generated from your resume",
+        "Export to PDF or Overleaf-ready LaTeX"
+      ],
+      technologies: ["React", "Node.js", "Express", "PostgreSQL", "Firebase", "Groq · LLaMA 3.3", "Puppeteer"],
+      impact: "Replaces a five-tool resume workflow with a single app",
+      hue: 330,
+      link: "https://github.com/ManasKhare3005/Resumify"
+    },
+    {
+      id: "devassist",
+      group: "nebula",
+      title: "DevAssist",
+      category: "Vision Agent · Automation",
+      description: "A lightweight agent that learns from real dashboard interactions and deploys projects to Vercel on its own.",
+      features: [
+        "ViT-Tiny encoder for pixel-level UI understanding",
+        "Playwright-driven Chromium automation",
+        "Hybrid bootstrapping: recorded trajectories + automated learning",
+        "Click heatmaps, action classification and text generation"
+      ],
+      technologies: ["Python", "Playwright", "Vision Transformer", "Chromium"],
+      impact: "Fully automates a 5-step Vercel deployment with zero manual intervention",
+      hue: 45,
       link: "https://github.com/ManasKhare3005/DevAssist"
     },
     {
-      title: "Field Engineer Task Management System",
-      category: "Enterprise Solution",
-      description: "A comprehensive task management platform designed to optimize field operations and resource allocation",
-      fullDescription: "Engineered an intelligent system that transforms how field engineers are assigned, prioritized, and tracked. The platform analyzes service types, location proximity, and resource availability to make smart task allocations, significantly reducing manual coordination effort.",
+      id: "greenify",
+      group: "nebula",
+      title: "Greenify",
+      category: "Computer Vision · AgriTech",
+      description: "Upload a photo of a plant and a trained model identifies disease early, with treatment suggestions.",
       features: [
-        "Intelligent task assignment based on multiple parameters",
-        "Real-time scheduling and resource allocation",
-        "Location-based optimization",
-        "Automated priority management",
-        "Comprehensive tracking and reporting"
+        "Image-based disease detection with TensorFlow",
+        "Disease information and treatment suggestions",
+        "Firebase back end, responsive UI"
+      ],
+      technologies: ["Python", "TensorFlow", "JavaScript", "Firebase"],
+      impact: "Identifies plant diseases early with 85%+ accuracy",
+      hue: 120,
+      link: "https://github.com/ManasKhare3005/Greenify"
+    },
+    {
+      id: "cozycafes",
+      group: "system",
+      title: "TheCozyCafes",
+      category: "Realtime · Full-Stack",
+      description: "A real-time chatroom with auth, persistence, presence and an incognito mode, built to scale across server instances.",
+      features: [
+        "JWT auth and WebSocket messaging with Socket.IO",
+        "Typing indicators, online users and ephemeral incognito messages",
+        "Redis adapter for multi-instance broadcasts",
+        "Docker Compose stack with GitHub Actions CI/CD"
+      ],
+      technologies: ["React", "Node.js", "Socket.IO", "PostgreSQL", "Prisma", "Redis", "Docker"],
+      impact: "Production-shaped realtime app with CI, health checks and horizontal scaling",
+      hue: 25,
+      link: "https://github.com/ManasKhare3005/TheCozyCafes"
+    },
+    {
+      id: "crispr",
+      group: "system",
+      title: "CRISPR: Promise & Peril",
+      category: "Data Visualization · ASU CSE 578",
+      description: "A dual-narrative interactive visualization contrasting the promise and the ethical risks of CRISPR gene editing.",
+      features: [
+        "Two contrasting narratives: Promise vs Peril",
+        "Interactive D3 visualizations of genetic-engineering concepts",
+        "User-driven exploration of ethics, inequality and mutation risk"
+      ],
+      technologies: ["D3.js", "JavaScript", "HTML5", "CSS3", "Netlify"],
+      impact: "Makes dense biotech research accessible and explorable",
+      hue: 300,
+      link: "https://crispr-promise-peril.netlify.app/"
+    },
+    {
+      id: "fieldengineer",
+      group: "system",
+      title: "Field Engineer Task Manager",
+      category: "Enterprise · Microservices",
+      description: "Smart assignment, prioritization and tracking of field engineers based on service type, proximity and availability.",
+      features: [
+        "Multi-parameter intelligent task assignment",
+        "Real-time scheduling and location-based optimization",
+        "Automated priority management and reporting"
       ],
       technologies: ["React", "SpringBoot", "MySQL", "Microservices", "Eureka"],
-      impact: "Reduced manual task allocation time by 60% and improved resource utilization",
-      icon: "🔧"
+      impact: "Cut manual task-allocation time by 60%",
+      hue: 210
     },
     {
-      title: "Greenify - Plant Disease Detection",
-      category: "Machine Learning",
-      description: "An AI-powered web application that helps farmers and gardeners protect their plants",
-      fullDescription: "Developed an intelligent plant disease detection system using machine learning algorithms. Users can simply upload a photo of their plant, and the ML model analyzes it to identify potential diseases, enabling early intervention and preventive care.",
-      features: [
-        "Real-time disease detection using ML",
-        "User-friendly image upload interface",
-        "Detailed disease information and treatment suggestions",
-        "Firebase backend for seamless data management",
-        "Responsive design for mobile and desktop"
-      ],
-      technologies: ["Python", "Machine Learning", "JavaScript", "Firebase", "TensorFlow"],
-      impact: "Helps users identify plant diseases early with 85%+ accuracy",
-      icon: "🌱"
-    },
-    {
+      id: "lookmyshow",
+      group: "system",
       title: "Look My Show",
-      category: "E-Commerce Platform",
-      description: "A feature-rich movie ticket booking platform inspired by BookMyShow",
-      fullDescription: "Built a complete ticket booking experience that replicates the functionality of major booking platforms. Users can browse movies, select their preferred seats with an interactive seating chart, and complete secure payments - all within a smooth, intuitive interface.",
+      category: "E-Commerce · Booking",
+      description: "A movie-ticket booking platform with interactive seat maps and real-time availability.",
       features: [
-        "Dynamic movie browsing and filtering",
-        "Interactive seat selection interface",
+        "Interactive seat selection with live availability",
         "Secure payment integration",
-        "Real-time seat availability updates",
         "Booking confirmation and ticket generation"
       ],
-      technologies: ["React", "JavaScript", "HTML5", "CSS3", "Firebase"],
-      impact: "Delivered seamless booking experience with 95% user satisfaction",
-      icon: "🎬"
+      technologies: ["React", "JavaScript", "Firebase"],
+      impact: "Seamless booking flow with 95% user satisfaction",
+      hue: 0
     },
     {
+      id: "railexpress",
+      group: "system",
       title: "Rail Express Service",
-      category: "Service Platform",
-      description: "Location-based service platform inspired by Indian Railways",
-      fullDescription: "Created a comprehensive web platform that connects railway passengers with essential services. The application provides easy access to catering, medical assistance, and porter services based on the user's location, making railway travel more convenient and comfortable.",
+      category: "Location-Based Services",
+      description: "Connects railway passengers with catering, medical and porter services based on where they are.",
       features: [
         "Location-based service discovery",
-        "Real-time service availability",
-        "Simple booking interface",
-        "Multiple service categories",
-        "User-friendly design"
+        "Real-time availability and simple booking"
       ],
       technologies: ["JavaScript", "HTML5", "CSS3", "Firebase"],
-      impact: "Simplified access to railway services for thousands of travelers",
-      icon: "🚂"
+      impact: "Simplified access to railway services for travelers",
+      hue: 150,
+      link: "https://github.com/ManasKhare3005/Rail-Express-Service"
     },
     {
-      title: "coWin Vaccine Slot Booking Bot",
-      category: "Automation Tool",
-      description: "Automated vaccination slot booking system with smart preferences",
-      fullDescription: "Developed an automation tool during the COVID-19 pandemic to help people secure vaccination slots. The bot monitors available slots based on user preferences like location, age group, and preferred dates, automatically booking when slots become available.",
+      id: "cowin",
+      group: "system",
+      title: "coWin Slot Booking Bot",
+      category: "Automation",
+      description: "Watched vaccination slots during COVID-19 and booked automatically based on location, age and date.",
       features: [
-        "Automated slot monitoring",
-        "Custom preference settings",
-        "Real-time availability checking",
-        "Automatic booking when slots open",
-        "Multi-user support"
+        "Automated slot monitoring with user preferences",
+        "Auto-booking the moment a slot opens"
       ],
-      technologies: ["JavaScript", "HTML5", "CSS3", "Chrome Dev Tools"],
-      impact: "Helped hundreds of users secure vaccination appointments during critical times",
-      icon: "💉"
+      technologies: ["JavaScript", "Chrome DevTools"],
+      impact: "Helped hundreds of people secure vaccination appointments",
+      hue: 190
     }
   ],
 
-  // Skills Section
-  skills: {
-    categories: [
-      {
-        title: "Programming Languages",
-        icon: "💻",
-        items: [
-          { name: "Python", stars: 4 },
-          { name: "Java", stars: 3 },
-          { name: "JavaScript", stars: 4 },
-          { name: "C/C++", stars: 4 }
-        ]
-      },
-      {
-        title: "Frontend Development",
-        icon: "🎨",
-        items: [
-          { name: "React", stars: 5 },
-          { name: "HTML5/CSS3", stars: 5 },
-          { name: "Tailwind", stars: 4 },
-          { name: "Responsive Design", stars: 4 }
-        ]
-      },
-      {
-        title: "Backend & Database",
-        icon: "⚙️",
-        items: [
-          { name: "SpringBoot", stars: 3 },
-          { name: "Microservices", stars: 3 },
-          { name: "MySQL", stars: 4 },
-          { name: "Firebase", stars: 4 }
-        ]
-      },
-      {
-        title: "Tools & Technologies",
-        icon: "🛠️",
-        items: [
-          { name: "Git/GitHub", stars: 5 },
-          { name: "Machine Learning", stars: 3 },
-          { name: "Oracle Cloud", stars: 3 },
-          { name: "Eureka", stars: 3 }
-        ]
-      }
-    ]
-  },
-
-  // Education Section
-  education: [
+  // Skills as constellations. Star shapes are real (normalized x/y, 0–1).
+  // level 1–5 sets how bright the star shines.
+  constellations: [
     {
-      degree: "Master of Science in Computer Science",
-      school: "Arizona State University",
-      location: "Arizona, USA",
-      period: "Aug 2025 – Present",
-      description: "Pursuing advanced studies in software engineering, distributed systems, and artificial intelligence",
-      icon: "🎓"
+      id: "orion",
+      name: "ML & AI",
+      real: "Orion · the Hunter",
+      stars: [
+        { name: "Python", level: 5, x: 0.24, y: 0.14 },
+        { name: "LLM Apps", level: 4, x: 0.74, y: 0.2 },
+        { name: "Embeddings & RAG", level: 3, x: 0.6, y: 0.5 },
+        { name: "PyTorch / TensorFlow", level: 3, x: 0.5, y: 0.53 },
+        { name: "Vision Transformers", level: 3, x: 0.4, y: 0.56 },
+        { name: "Speech (Whisper)", level: 3, x: 0.3, y: 0.88 },
+        { name: "Fine-tuning (LoRA)", level: 3, x: 0.78, y: 0.85 }
+      ],
+      lines: [[0, 1], [0, 4], [1, 2], [2, 3], [3, 4], [4, 5], [2, 6]]
     },
     {
-      degree: "B.Tech. in Computer Science & Engineering",
-      school: "SRM Institute of Science and Technology",
-      location: "India",
-      period: "June 2019 – June 2023",
-      gpa: "8.42 CGPA",
-      description: "Graduated with honors, specializing in software development and machine learning",
-      icon: "🎓"
+      id: "cassiopeia",
+      name: "Frontend",
+      real: "Cassiopeia · the Queen",
+      stars: [
+        { name: "React", level: 5, x: 0.06, y: 0.3 },
+        { name: "TypeScript", level: 4, x: 0.3, y: 0.72 },
+        { name: "HTML / CSS", level: 5, x: 0.5, y: 0.42 },
+        { name: "Tailwind", level: 4, x: 0.7, y: 0.74 },
+        { name: "Three.js / D3", level: 3, x: 0.94, y: 0.28 }
+      ],
+      lines: [[0, 1], [1, 2], [2, 3], [3, 4]]
+    },
+    {
+      id: "ursa",
+      name: "Backend & Data",
+      real: "Ursa Major · the Great Bear",
+      stars: [
+        { name: "Node / Express", level: 4, x: 0.88, y: 0.26 },
+        { name: "SpringBoot", level: 3, x: 0.86, y: 0.58 },
+        { name: "PostgreSQL", level: 4, x: 0.62, y: 0.66 },
+        { name: "MySQL", level: 4, x: 0.6, y: 0.36 },
+        { name: "FastAPI", level: 3, x: 0.42, y: 0.3 },
+        { name: "Socket.IO", level: 4, x: 0.24, y: 0.26 },
+        { name: "Firebase", level: 4, x: 0.06, y: 0.42 }
+      ],
+      lines: [[0, 1], [1, 2], [2, 3], [3, 0], [3, 4], [4, 5], [5, 6]]
+    },
+    {
+      id: "cygnus",
+      name: "Languages",
+      real: "Cygnus · the Swan",
+      stars: [
+        { name: "Python", level: 4, x: 0.5, y: 0.06 },
+        { name: "JavaScript", level: 4, x: 0.5, y: 0.4 },
+        { name: "Java", level: 3, x: 0.84, y: 0.28 },
+        { name: "C / C++", level: 4, x: 0.14, y: 0.56 },
+        { name: "TypeScript", level: 4, x: 0.52, y: 0.94 }
+      ],
+      lines: [[0, 1], [1, 4], [2, 1], [1, 3]]
+    },
+    {
+      id: "lyra",
+      name: "Tools & Cloud",
+      real: "Lyra · the Lyre",
+      stars: [
+        { name: "Git / GitHub", level: 5, x: 0.3, y: 0.1 },
+        { name: "Docker", level: 3, x: 0.1, y: 0.28 },
+        { name: "CI/CD (Actions)", level: 3, x: 0.46, y: 0.36 },
+        { name: "Microservices", level: 3, x: 0.74, y: 0.42 },
+        { name: "Redis", level: 3, x: 0.66, y: 0.88 },
+        { name: "Oracle Cloud", level: 3, x: 0.38, y: 0.82 }
+      ],
+      lines: [[0, 1], [0, 2], [2, 3], [3, 4], [4, 5], [5, 2]]
     }
   ],
 
-  // Certifications
-  certifications: [
-    {
-      name: "Machine Learning",
-      provider: "Stanford University",
-      icon: "🏆"
-    },
-    {
-      name: "Machine Learning Foundations: A Case Study Approach",
-      provider: "University of Washington",
-      icon: "🏆"
-    },
-    {
-      name: "Oracle Cloud Infrastructure Foundations",
-      provider: "Oracle",
-      icon: "🏆"
-    }
-  ],
-
-  // Achievements
   achievements: [
-    {
-      title: "Top 25 - Zeta Hacks",
-      description: "Selected among top 25 teams out of 200+ participating teams in this prestigious hackathon",
-      icon: "🏅"
-    },
-    {
-      title: "Top 5 - HackBMU 4.0",
-      description: "Secured position in top 5 teams, demonstrating exceptional problem-solving and innovation",
-      icon: "🏅"
-    },
-    {
-      title: "1st Place - Hack-A-Code",
-      description: "Won first position among 35 competing teams, showcasing superior coding skills and creativity",
-      icon: "🥇"
-    }
+    { title: "1st Place, Hack-A-Code", description: "Won first place among 35 competing teams.", rank: 1 },
+    { title: "Top 5, HackBMU 4.0", description: "Finished in the top 5 teams for problem-solving and innovation.", rank: 2 },
+    { title: "Top 25, Zeta Hacks", description: "Selected in the top 25 of 200+ teams.", rank: 3 }
+  ],
+
+  certifications: [
+    { name: "Machine Learning", provider: "Stanford University" },
+    { name: "ML Foundations: A Case Study Approach", provider: "University of Washington" },
+    { name: "Oracle Cloud Infrastructure Foundations", provider: "Oracle" }
+  ],
+
+  // Revealed after all seven lights are found
+  secretLetter: [
+    "You found all seven lights.",
+    "Most people scroll past the small things. You didn't, and that's the kind of attention I try to bring to everything I build.",
+    "In one of my favourite stories, little lights like these grant a wish. So go ahead and make one.",
+    "And if your wish involves building something together, you know where to find me."
   ]
 };
