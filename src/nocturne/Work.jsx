@@ -210,7 +210,7 @@ function OrbitSystem({ projects, selected, onSelect }) {
   );
 }
 
-const NEBULA_SPOTS = [[0.3, 0.3], [0.68, 0.24], [0.52, 0.52], [0.22, 0.68], [0.78, 0.62], [0.5, 0.84]];
+const NEBULA_SPOTS = [[0.3, 0.26], [0.68, 0.22], [0.52, 0.5], [0.2, 0.62], [0.8, 0.58], [0.44, 0.84], [0.76, 0.86]];
 
 function NebulaField({ projects, selected, onSelect }) {
   return (

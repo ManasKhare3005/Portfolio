@@ -174,7 +174,24 @@ export const portfolioData = {
       technologies: ["React", "Node.js", "Express", "PostgreSQL", "Firebase", "Groq · LLaMA 3.3", "Puppeteer"],
       impact: "Replaces a five-tool resume workflow with a single app",
       hue: 330,
-      link: "https://github.com/ManasKhare3005/Resumify"
+      link: "https://resumify-hlur.onrender.com/"
+    },
+    {
+      id: "coverageatlas",
+      group: "nebula",
+      title: "CoverageAtlas",
+      category: "Policy Intelligence · RAG",
+      description: "Makes payer policy documents searchable, comparable and explainable, with every coverage answer backed by a citation.",
+      features: [
+        "Policy ingestion from PDF and web with structured rule extraction",
+        "Citation-first RAG over Postgres evidence and Qdrant vector search",
+        "Plan comparison, policy timelines and version diffing",
+        "LiveKit voice agent for real-time grounded coverage questions"
+      ],
+      technologies: ["React", "TypeScript", "FastAPI", "PostgreSQL", "Qdrant", "Gemini", "LiveKit", "Docker"],
+      impact: "Turns dense insurance coverage policies into source-backed answers",
+      hue: 355,
+      link: "https://coverageatlas.vercel.app/ask"
     },
     {
       id: "devassist",

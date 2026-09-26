@@ -1,8 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders portfolio hero and featured projects', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getByRole('heading', { name: /manas khare/i })).toBeInTheDocument();
+  // Each project name shows up more than once (star label, pill, detail card)
+  ['Resumify', 'CareBridge', 'Concierge', 'CoverageAtlas'].forEach((name) => {
+    expect(screen.getAllByText(name).length).toBeGreaterThan(0);
+  });
 });
