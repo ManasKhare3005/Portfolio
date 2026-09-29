@@ -110,11 +110,14 @@ export const portfolioData = {
       org: "Ramsey Products Corporation",
       location: "Remote",
       period: "Jun 2026 – Aug 2026 · Sep 2026 – Present",
-      description: "Brought back after the summer to keep building. Still waxing.",
+      description: "Rebuilding a legacy engineering drive-selection tool as a modern web app, live in production. Still waxing.",
       points: [
-        "Rebuilt the company's existing program for customer dealings and internal operations from scratch, used by customers and numerous internal teams"
+        "Rebuilt a legacy ASP program as a React + Node/Express app on MySQL/MariaDB, migrating all customer records and historical calculations with zero data loss",
+        "Reproduced the published horsepower rating tables, compressing ~231K values into 817 breakpoints (~99.6% smaller) with error under 10⁻⁶",
+        "Built a sales dashboard with drill-downs and a scheduled email digest, secured with HMAC-signed role tokens, scrypt hashing and invite-based onboarding",
+        "Fixed calculation defects the old system hid, backed by a 48-test regression suite against engineering reference data"
       ],
-      technologies: []
+      technologies: ["React", "Vite", "Node.js", "Express", "MySQL / MariaDB"]
     }
   ],
 
@@ -254,23 +257,6 @@ export const portfolioData = {
       impact: "Won 1st place out of ~30 teams at ASU's Ira A. Fulton Schools of Engineering hackathon",
       hue: 38,
       link: "https://github.com/Manavpatel06/ClashCheck"
-    },
-    {
-      id: "cozycafes",
-      group: "system",
-      title: "TheCozyCafes",
-      category: "Realtime · Full-Stack",
-      description: "A real-time chatroom with auth, persistence, presence and an incognito mode, built to scale across server instances.",
-      features: [
-        "JWT auth and WebSocket messaging with Socket.IO",
-        "Typing indicators, online users and ephemeral incognito messages",
-        "Redis adapter for multi-instance broadcasts",
-        "Docker Compose stack with GitHub Actions CI/CD"
-      ],
-      technologies: ["React", "Node.js", "Socket.IO", "PostgreSQL", "Prisma", "Redis", "Docker"],
-      impact: "Production-shaped realtime app with CI, health checks and horizontal scaling",
-      hue: 25,
-      link: "https://github.com/ManasKhare3005/TheCozyCafes"
     },
     {
       id: "crispr",
