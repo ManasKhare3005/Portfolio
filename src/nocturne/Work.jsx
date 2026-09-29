@@ -131,11 +131,14 @@ function ProjectDetail({ p }) {
       <div className="detail-head">
         <div className="detail-planet" style={{ '--h': p.hue }} aria-hidden="true">
           <span className="planet-body" style={{ background: sphere(p.hue) }} />
-          {moons.map((t, i) => (
-            <span key={t} className="moon-orbit" style={{ '--r': `${36 + i * 6}px`, '--t': `${7 + i * 3.4}s`, '--o': `${i * -2.1}s` }}>
+          {moons.map((t, i) => {
+            const period = 7 + i * 3.4;
+            return (
+            <span key={t} className="moon-orbit" style={{ '--r': `${36 + i * 6}px`, '--t': `${period}s`, '--o': `${-period * (i / moons.length)}s` }}>
               <span className="tech-moon" />
             </span>
-          ))}
+            );
+          })}
         </div>
         <div>
           <p className="detail-category">{p.category}</p>
@@ -179,16 +182,25 @@ function ProjectPills({ projects, selected, onSelect }) {
   );
 }
 
+// Orbit radii and planet sizes are in % of the system's width, so it scales down cleanly on phones
+const ORBIT_INNER = 19;
+const ORBIT_OUTER = 48;
+
 function OrbitSystem({ projects, selected, onSelect }) {
+  const step = projects.length > 1 ? (ORBIT_OUTER - ORBIT_INNER) / (projects.length - 1) : 0;
+  // A planet's diameter must stay under the gap between orbits, or neighbours collide when they line up
+  const planetMax = Math.min(5.5, step * 0.8);
   return (
     <div className="orbit-system" aria-label="Full-stack projects shown as planets">
       <div className="orbit-sun"><span>full-stack</span></div>
       {projects.map((p, i) => {
-        const r = 20 + (i * 28) / Math.max(1, projects.length - 1);
-        const duration = 46 + i * 17;
-        const delay = -(duration * ((i * 0.37) % 1));
+        const r = ORBIT_INNER + i * step;
+        const duration = 50 + i * 16;
+        const phase = (i * 0.382) % 1; // golden-ratio spacing keeps neighbours apart
+        const delay = -duration * phase;
+        const size = planetMax * (0.78 + 0.11 * (i % 3));
         return (
-          <div key={p.id} className="orbit" style={{ '--r': `${r}%`, '--start': `${Math.round(((i * 0.37) % 1) * 360)}deg` }}>
+          <div key={p.id} className={`orbit ${selected === p.id ? 'on' : ''}`} style={{ '--r': `${r}%`, '--start': `${Math.round(phase * 360)}deg` }}>
             <div className="orbit-ring" />
             <div className="orbit-arm" style={{ animationDuration: `${duration}s`, animationDelay: `${delay}s` }}>
               <button
@@ -196,7 +208,7 @@ function OrbitSystem({ projects, selected, onSelect }) {
                 className={`planet ${selected === p.id ? 'on' : ''}`}
                 onClick={() => onSelect(p.id)}
                 aria-label={p.title}
-                style={{ '--size': `${16 + (projects.length - i) * 2.4}px`, animationDuration: `${duration}s`, animationDelay: `${delay}s` }}
+                style={{ '--size': size, animationDuration: `${duration}s`, animationDelay: `${delay}s` }}
               >
                 <span className="planet-body" style={{ background: sphere(p.hue) }} />
                 {i % 3 === 1 && <span className="planet-ring" />}
