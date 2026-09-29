@@ -102,6 +102,14 @@ Oracle Cloud Infrastructure Foundations -- Oracle
         that shows students grade-weighted priority flashcards on Canvas.
 \end{itemize}
 
+\project{Hey Max -- Local Voice Assistant}{Python, Ollama, Qwen3, faster-whisper, sherpa-onnx, Piper}
+\begin{itemize}
+  \item Built a private, fully offline voice assistant: wake word, speech recognition, LLM reasoning, and text-to-speech
+        all run on-device, with a tool-calling agent that controls apps, files, media, notes, and power settings.
+  \item Routed commands to qwen3:4b with on-demand escalation to qwen3:8b, gated risky actions behind spoken
+        confirmation, and hardened wake-word detection with 4 staggered decoders and auto-gain.
+\end{itemize}
+
 \project{Autonomous Deployment Agent}{Python, Vision Transformers (ViT-Tiny), Playwright, Chromium}
 \begin{itemize}
   \item Built an ML-driven agent that learns UI interaction workflows from recorded trajectories to autonomously deploy
