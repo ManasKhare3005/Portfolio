@@ -404,13 +404,33 @@ main, .footer { position: relative; z-index: 2; }
 .orbit-system, .nebula-field { position: relative; width: min(500px, 88vw, 100%); aspect-ratio: 1; }
 .orbit-system { container-type: inline-size; }
 .orbit-sun {
-  position: absolute; left: 50%; top: 50%; width: 13cqw; height: 13cqw; transform: translate(-50%, -50%);
-  border-radius: 50%; display: grid; place-items: center;
-  background: radial-gradient(circle, #fff6dc 0%, #ffd98f 35%, #f2a04a 70%, rgba(242, 140, 60, 0) 100%);
-  box-shadow: 0 0 60px 18px rgba(255, 190, 100, .35);
-  animation: breathe 6s ease-in-out infinite;
+  /* Centred with margins, not transform, so the pulse animation can't knock it off-centre */
+  position: absolute; left: 50%; top: 50%; width: 12cqw; height: 12cqw; margin: -6cqw 0 0 -6cqw;
+  border-radius: 50%; z-index: 1;
+  background: radial-gradient(circle at 42% 40%, #fffef6 0%, #fff0c2 20%, #ffcf7a 45%, #f59a45 75%, #d8662e 100%);
+  box-shadow:
+    0 0 1.6cqw .4cqw rgba(255, 226, 160, .7),
+    0 0 6cqw 2cqw rgba(255, 180, 90, .3),
+    0 0 14cqw 5cqw rgba(255, 150, 70, .12);
+  animation: sun-pulse 7s ease-in-out infinite;
 }
-.orbit-sun span { font-size: clamp(6px, 1.5cqw, 9px); letter-spacing: .12em; white-space: nowrap; text-transform: uppercase; color: #5a3100; font-weight: 600; }
+.orbit-sun::before {
+  /* faint rotating corona */
+  content: ''; position: absolute; inset: -55%; border-radius: 50%; pointer-events: none;
+  background: repeating-conic-gradient(from 0deg, rgba(255, 222, 160, .16) 0deg 3deg, transparent 3deg 14deg);
+  -webkit-mask: radial-gradient(circle, transparent 30%, #000 36%, transparent 70%);
+          mask: radial-gradient(circle, transparent 30%, #000 36%, transparent 70%);
+  animation: spin 90s linear infinite;
+}
+.orbit-sun span {
+  position: absolute; top: 100%; margin-top: 1.4cqw; left: 50%; transform: translateX(-50%);
+  font-size: clamp(8px, 1.9cqw, 10px); letter-spacing: .24em; white-space: nowrap; text-transform: uppercase;
+  color: var(--ink-2); font-weight: 500;
+}
+@keyframes sun-pulse {
+  0%, 100% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.04); filter: brightness(1.08); }
+}
 .orbit { position: absolute; left: 50%; top: 50%; width: calc(var(--r) * 2); height: calc(var(--r) * 2); transform: translate(-50%, -50%); pointer-events: none; }
 .orbit-ring { position: absolute; inset: 0; border-radius: 50%; border: 1px solid var(--line); opacity: .6; transition: border-color .4s, opacity .4s; }
 .orbit.on .orbit-ring { border-color: rgba(var(--accent-rgb), .55); opacity: 1; }
