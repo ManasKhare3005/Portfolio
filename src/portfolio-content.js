@@ -100,8 +100,20 @@ export const portfolioData = {
       org: "Arizona State University",
       location: "Arizona, USA",
       period: "Aug 2025 – Present",
-      description: "Graduate study in software engineering, distributed systems and artificial intelligence. Still waxing.",
+      description: "Graduate study in software engineering, distributed systems and artificial intelligence.",
       points: [],
+      technologies: []
+    },
+    {
+      kind: "work",
+      title: "Software Development Intern",
+      org: "Ramsey Products Corporation",
+      location: "Remote",
+      period: "Jun 2026 – Aug 2026 · Sep 2026 – Present",
+      description: "Brought back after the summer to keep building. Still waxing.",
+      points: [
+        "Rebuilt the company's existing program for customer dealings and internal operations from scratch, used by customers and numerous internal teams"
+      ],
       technologies: []
     }
   ],
@@ -225,6 +237,23 @@ export const portfolioData = {
       impact: "Identifies plant diseases early with 85%+ accuracy",
       hue: 120,
       link: "https://github.com/ManasKhare3005/Greenify"
+    },
+    {
+      id: "clashcheck",
+      group: "system",
+      title: "ClashCheck",
+      category: "1st Place · Design Experiences × Fulton Ambassadors Hackathon",
+      description: "An assessment-collision radar: professors check a proposed exam date against their class's anonymous workload before announcing it.",
+      features: [
+        "Collision engine that surfaces the clearest nearby dates for an assessment",
+        "Syllabus and Canvas calendar (.ics) extraction with the Claude API, with a regex fallback",
+        "Chrome extension that shows students grade-weighted priority flashcards on Canvas",
+        "Separate professor/TA and student dashboards"
+      ],
+      technologies: ["Node.js", "Express", "Claude API", "Chrome Extension", "pdf-parse", "node-ical"],
+      impact: "Won 1st place out of ~30 teams at ASU's Ira A. Fulton Schools of Engineering hackathon",
+      hue: 38,
+      link: "https://github.com/Manavpatel06/ClashCheck"
     },
     {
       id: "cozycafes",
@@ -396,6 +425,7 @@ export const portfolioData = {
   ],
 
   achievements: [
+    { title: "1st Place, Design Experiences × Fulton Ambassadors Hackathon", description: "Won first of ~30 teams at ASU's Ira A. Fulton Schools of Engineering with ClashCheck (Sep 2026).", rank: 1 },
     { title: "1st Place, Hack-A-Code", description: "Won first place among 35 competing teams.", rank: 1 },
     { title: "Top 5, HackBMU 4.0", description: "Finished in the top 5 teams for problem-solving and innovation.", rank: 2 },
     { title: "Top 25, Zeta Hacks", description: "Selected in the top 25 of 200+ teams.", rank: 3 }

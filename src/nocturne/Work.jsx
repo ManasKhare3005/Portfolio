@@ -184,7 +184,7 @@ function OrbitSystem({ projects, selected, onSelect }) {
     <div className="orbit-system" aria-label="Full-stack projects shown as planets">
       <div className="orbit-sun"><span>full-stack</span></div>
       {projects.map((p, i) => {
-        const r = 22 + i * 5.3;
+        const r = 20 + (i * 28) / Math.max(1, projects.length - 1);
         const duration = 46 + i * 17;
         const delay = -(duration * ((i * 0.37) % 1));
         return (

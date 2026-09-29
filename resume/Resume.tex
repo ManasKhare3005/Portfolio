@@ -1,0 +1,142 @@
+% Resume for Manas Khare
+% Build: tectonic resume/Resume.tex --outdir public   (or paste into Overleaf)
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[margin=0.6in,top=0.5in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage[T1]{fontenc}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{0pt}
+\raggedright
+
+% Section headings: bold, full-width rule underneath
+\titleformat{\section}{\large\bfseries}{}{0pt}{}[\vspace{-6pt}\rule{\textwidth}{0.5pt}]
+\titlespacing*{\section}{0pt}{10pt}{6pt}
+
+% Bullets drawn as asterisks, tight spacing
+\setlist[itemize]{label=$\ast$, leftmargin=1.3em, topsep=1pt, itemsep=0pt, parsep=0pt}
+
+% \entry{left-top}{right-top}{left-bottom}{right-bottom}
+\newcommand{\entry}[4]{%
+  \begin{tabularx}{\textwidth}{@{}X r@{}}
+    #1 & #2 \\
+    \textbf{#3} & #4 \\
+  \end{tabularx}\vspace{-1pt}}
+
+% \project{name}{tech}
+\newcommand{\project}[2]{\textbf{#1} $||$ \textit{#2}\vspace{-1pt}}
+
+\begin{document}
+
+%----- Header -----
+\begin{center}
+  {\fontsize{26}{30}\selectfont\bfseries Manas Khare}\\[3pt]
+  \href{mailto:manaskhare63739@gmail.com}{manaskhare63739@gmail.com} $|$ +1 (602) 743-5297 $|$ Tempe, AZ $|$
+  \href{https://www.linkedin.com/in/manas-khare-3b377818b/}{www.linkedin.com/in/manas-khare-3b377818b/}\\
+  Software Engineer $|$ Full Stack Systems $|$ Machine Learning \& NLP
+\end{center}
+
+%----- Summary -----
+\section*{Summary}
+Software engineer with industry experience building full stack applications using Java, SpringBoot, and React. Currently
+pursuing a Master's in Computer Science and expanding into machine learning and NLP, with a strong interest in designing
+scalable, intelligent systems that combine software engineering with data driven solutions.
+
+%----- Education -----
+\section*{Education}
+\entry{Master of Science in Computer Science}{}{Arizona State University -- Tempe, AZ}{Aug 2025 -- Present}
+\entry{B.Tech in Computer Science -- CGPA: 8.42/10}{}{SRM Institute of Science and Technology -- India}{June 2019 -- June 2023}
+
+%----- Certifications -----
+\section*{Certifications}
+Machine Learning -- Stanford University\\
+ML Foundations -- University of Washington\\
+Oracle Cloud Infrastructure Foundations -- Oracle
+
+%----- Experience -----
+\section*{Experience}
+\entry{Software Development Intern}{Jun 2026 -- Aug 2026, Sep 2026 -- Present}{Ramsey Products Corporation}{Remote}
+\begin{itemize}
+  \item Rebuilt the company's existing program for customer dealings and internal operations from scratch, used by
+        customers and numerous internal teams.
+\end{itemize}
+
+\entry{Software Developer}{Sep 2024 -- July 2025}{EQG Glassmach}{Por, Gujarat, India}
+\begin{itemize}
+  \item Contributed to building an order management system that streamlined processing and improved resource accessibility
+        for internal teams.
+  \item Collaborated with cross-functional teams to gather requirements, develop features, and resolve bugs.
+\end{itemize}
+
+\entry{Associate Engineer}{Mar 2024 -- Sep 2024}{Brillio}{Bengaluru, Karnataka, India}
+\begin{itemize}
+  \item Designed and implemented software solutions aligned with client requirements using SpringBoot, React, and MySQL.
+  \item Improved application efficiency by optimizing APIs and using microservices like Eureka and collaborating across teams
+        for feature delivery.
+\end{itemize}
+
+\entry{Software Developer Trainee}{June 2023 -- Feb 2024}{EQG Glassmach}{Por, Gujarat, India}
+\begin{itemize}
+  \item Led customer-site installations for key projects, ensuring on-time deployment and smooth adoption.
+  \item Developed order management software that improved operational efficiency and resource accessibility.
+\end{itemize}
+
+%----- Projects -----
+\section*{Projects}
+\project{ClashCheck}{Node.js, Express, Claude API, Chrome Extension}
+\begin{itemize}
+  \item Won 1st place among $\sim$30 teams at the Design Experiences $\times$ Fulton Ambassadors Hackathon (ASU) with an
+        assessment-collision radar that lets professors check a proposed exam date against students' anonymous course load.
+  \item Built syllabus and Canvas calendar (.ics) extraction with the Claude API (regex fallback) and a Chrome extension
+        that shows students grade-weighted priority flashcards on Canvas.
+\end{itemize}
+
+\project{Autonomous Deployment Agent}{Python, Vision Transformers (ViT-Tiny), Playwright, Chromium}
+\begin{itemize}
+  \item Built an ML-driven agent that learns UI interaction workflows from recorded trajectories to autonomously deploy
+        applications through the Vercel dashboard.
+  \item Implemented a Vision Transformer (ViT-Tiny) for pixel-level UI understanding and integrated it with Playwright-based
+        browser automation to complete the full deployment pipeline from project creation to live deployment.
+\end{itemize}
+
+\project{Greenify}{HTML/CSS, JavaScript, Firebase, Python, Machine Learning}
+\begin{itemize}
+  \item Developed a web app that detects plant diseases using machine learning, enabling users to identify infections early and
+        take preventive measures.
+\end{itemize}
+
+\project{coWin Vaccine Slot Booking Bot}{HTML/CSS, JavaScript, Google Dev Tools}
+\begin{itemize}
+  \item Built an automation tool to book vaccination slots, supporting custom preferences (location, age group, dates) for
+        users.
+\end{itemize}
+
+\project{Field Engineer Task Management System}{HTML/CSS, JavaScript, React, Java, SpringBoot, MySQL, Eureka}
+\begin{itemize}
+  \item Engineered a system to assign, prioritize, track field tasks based on service type, location, and resource availability.
+  \item Integrated scheduling logic and task allocation, reducing manual effort.
+\end{itemize}
+
+%----- Achievements -----
+\section*{Achievements}
+1st Place among $\sim$30 teams in the Design Experiences $\times$ Fulton Ambassadors Hackathon, Ira A. Fulton Schools of Engineering (Sep 2026).\\
+Top 25 teams in Zeta Hacks out of 200+ teams.\\
+Top 5 teams in HackBMU 4.0.\\
+Secured 1st Position in Hack-A-Code among 35 teams.
+
+%----- Skills -----
+\section*{Technical Skills}
+Languages: Java, Python, C, C++\\
+Full Stack Development: HTML5, CSS3, JavaScript, React, REST APIs\\
+Backend \& Systems: Spring, SpringBoot, Microservices Architecture\\
+Databases: MySQL, Firebase\\
+Machine Learning \& NLP: Supervised Learning, Model Training, Data Preprocessing, NLP Fundamentals\\
+Tools \& Platforms: Git, GitHub, GitLab, Oracle Cloud Infrastructure\\
+Concepts: Object-Oriented Programming, Distributed Systems Basics, Software Design, API Development
+
+\end{document}
