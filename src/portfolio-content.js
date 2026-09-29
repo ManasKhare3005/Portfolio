@@ -124,6 +124,23 @@ export const portfolioData = {
   // Projects. group: "system" = full-stack planets, "nebula" = ML / AI stars.
   projects: [
     {
+      id: "heymax",
+      group: "nebula",
+      title: "Hey Max",
+      category: "Local AI · Voice Assistant",
+      description: "A private voice assistant that lives entirely on your laptop: say \"Hey Max\" and it listens, thinks with a local LLM, runs tools and answers out loud. No cloud.",
+      features: [
+        "Open-vocabulary wake word (sherpa-onnx) with 4 staggered decoders and auto-gain for reliable detection",
+        "On-device speech: faster-whisper to listen, Piper to speak",
+        "Tool-calling agent on Ollama: qwen3:4b for most commands, escalating to qwen3:8b when it needs to think harder",
+        "Safety gate: risky actions like closing apps or shutting down need a spoken yes"
+      ],
+      technologies: ["Python", "Ollama", "Qwen3", "faster-whisper", "sherpa-onnx", "Piper", "pytest"],
+      impact: "Wake word, speech, reasoning and voice all run offline. Phase 1 of 6 is done",
+      hue: 290,
+      link: "https://github.com/ManasKhare3005/Hey-Max"
+    },
+    {
       id: "concierge",
       group: "nebula",
       title: "Concierge",
